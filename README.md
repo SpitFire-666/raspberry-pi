@@ -1,7 +1,7 @@
 # raspberry-pi
 
 
-Installation/OS Install
+<h1>Installation/OS Install</h1>
 Windows 
 
 
@@ -46,7 +46,7 @@ Enable ssh
 Sudo raspi-config 
 ```` 
 
-Camera
+<h1>📷Camera</h1>
 
-Pi-Hole
+<h1>🚫Pi-Hole🚫</h1>
 
