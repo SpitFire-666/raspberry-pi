@@ -46,7 +46,13 @@ ssh
 wpa_supplicant.conf 
 ````
 
- 
+ssh pi@<ipaddress>
+
+Set WiFi locale
+````
+        sudo raspi-config nonint do_wifi_country AU
+````
+	
 Login as pi, password raspberry 
 
  
