@@ -53,7 +53,12 @@ Set WiFi locale
 	
 
 
-Set hostname, set timezone
+Set hostname
+	
+````
+sudo hostnamectl set-hostname my-raspberry-pi	
+````
+	, set timezone
 
 ````
 Sudo raspi-config 
@@ -66,6 +71,10 @@ Enable camera
 ````
 sudo raspi-config
 ````
+	
+	Test camera
+	
+	raspistill -o  image.jpg 
 	
 3, interface options
 	
