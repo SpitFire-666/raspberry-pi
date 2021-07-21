@@ -89,6 +89,100 @@ sudo ./RPi_Cam_Web_Interface/install.sh
 sudo reboot
 ````
 	
+WEB INTERFACE 
+
+    Set motion detection to internal 
+
+    Set Buffer to 4000 
+
+ 
+
+Custom annotation 
+
+````
+%h:%m:%s %a 
+````
+ 
+
+Use ````%a````, this references ````/dev/shm/mjpeg/user_annotate.txt````
+
+Use a cron job to update this file automatically (eg for day of week): 
+
+````sudo crontab -e````
+
+````
+  * * * * * date +"\%a \%d \%b \%Y"  > /dev/shm/mjpeg/user_annotate.txt 
+````
+ 
+
+ 
+
+Change site name/page title 
+````
+sudo nano /var/www/html/config.php 
+````
+define('CAM_STRING',"CATCAM - BACKYARD"); 
+
+ 
+
+ 
+
+Motion detection/Notifications 
+
+ 
+
+ 
+	
+
+sudo nano /var/www/html/macros/motion_event.sh 
+
+ 
+	
+
+sudo "#!/bin/bash" >>  /var/www/html/macros/motion_event.sh 
+
+ 
+ 
+	
+
+#!/bin/bash 
+
+curl -u o.aaB9N2D4gBixznT7o7gM9FKm8FVzB9R7: https://api.pushbullet.com/v2/pushes -d type=note -d title="CATCAM - Motion Detected" -d body='Potential wild animal sighting!' 
+
+ 
+	
+
+sudo chown www-data:www-data /var/www/html/macros/motion_event.sh 
+
+sudo chmod 764 /var/www/html/macros/motion_event.sh 
+
+ 
+
+Add buffer  
+
+sudo nano /etc/raspimjpeg 
+
+video_buffer in ms 
+
+ 
+FAVICON 
+
+
+
+ 
+
+Tap solenoid 
+20mm 
+
+ 
+Disable camera LED
+
+	I've disabled the main camera LED by adding disable_camera_led=1 to my /boot/config.txt, and that works fine.
+
+ 
+	
+<h2>Night Vision/IR camera</h2>
+
 	
 <h1>🚫Pi-Hole🚫</h1>
 
