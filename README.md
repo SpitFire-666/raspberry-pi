@@ -47,25 +47,26 @@ wpa_supplicant.conf
 ````
 
 ssh pi@<ipaddress>
-
+password: raspberry
+        
+        
 Set WiFi locale
 ````
         sudo raspi-config nonint do_wifi_country AU
 ````
 	
-Login as pi, password raspberry 
-
- 
 
 
-Set hostname 
+Set hostname, set timezone
 
-Enable ssh 
 ````
 Sudo raspi-config 
 ```` 
 
 <h1>📷Camera📷</h1>
+        
+Enable camera
+sudo raspi-config
 
 <h1>🚫Pi-Hole🚫</h1>
 
