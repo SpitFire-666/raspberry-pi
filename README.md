@@ -25,10 +25,23 @@ new-item -ItemType File -Name ssh -Path e:\
 ````
 
 
+````
+@"
+country=AU
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+	ssid="GlobalEliteHackingCrew"
+	psk="password"
+	key_mgmt=WPA-PSK
+}
+"@
+$config | out-file c:\temp\text.txt
+```````
 
 Copy files to BOOT 
 ````
-.ssh 
+ssh 
 
 wpa_supplicant.conf 
 ````
@@ -46,7 +59,9 @@ Enable ssh
 Sudo raspi-config 
 ```` 
 
-<h1>📷Camera</h1>
+<h1>📷Camera📷</h1>
 
 <h1>🚫Pi-Hole🚫</h1>
 
+
+<h1>🕹Retro-Pi</h1>
