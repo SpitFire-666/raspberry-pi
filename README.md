@@ -186,5 +186,25 @@ Disable camera LED
 	
 <h1>🚫Pi-Hole🚫</h1>
 
+Disable IPv6 queries showing up 
 
+sudo nano /etc/pihole/pihole-FTL.conf 
+
+AAAA_QUERY_ANALYSIS=no 
+
+ 
+
+ 
+
+Adlist location 
+
+/etc/pihole/adlists.list 
+
+ 
+
+Remove password from web console 
+
+pihole -a -p 
+	
+	
 <h1>🕹Retro-Pi</h1>
