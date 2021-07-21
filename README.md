@@ -72,10 +72,18 @@ sudo raspi-config
 ```
         #3, interface options
 	
+
+Update and upgrade
+
+````
+sudo apt-get update -y && sudo apt-get dist-upgrade -y
+````
+	
 Install Git
+	
 ````        
-        sudo apt-get install git -y
-        git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git 
+sudo apt-get install git -y
+git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git 
 sudo ./RPi_Cam_Web_Interface/install.sh 
 ````
 <h1>🚫Pi-Hole🚫</h1>
