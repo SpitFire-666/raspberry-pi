@@ -66,8 +66,12 @@ Sudo raspi-config
 <h1>📷Camera📷</h1>
         
 Enable camera
+
+````
 sudo raspi-config
+```
         #3, interface options
+	
 Install Git
 ````        
         sudo apt-get install git -y
