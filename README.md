@@ -9,7 +9,9 @@ Windows
 
 Download an OS eg: 
 
+````
 2018-06-27-raspbian-stretch-lite.zip
+````
 
 NOTE: No need to extract the .img - Etcher will read the .zip just fine
 
