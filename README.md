@@ -70,7 +70,7 @@ Enable camera
 ````
 sudo raspi-config
 ```
-        #3, interface options
+3, interface options
 	
 
 Update and upgrade
