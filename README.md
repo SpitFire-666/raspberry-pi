@@ -2,10 +2,6 @@
 
 
 <h1>Installation/OS Install</h1>
-Windows 
-
-
- 
 
 Download an OS eg: 
 
