@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/38451588/126574688-051a6b6a-df2e-494d-9aef-51e4c6470857.png)
 
 
-<h1>Installation/OS Install</h1>
+<h1>Installation/OS Install (Windows) </h1>
 
 Download an OS from https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
@@ -23,7 +23,7 @@ new-item -ItemType File -Name ssh -Path e:\
 - Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
 
 ````
-@"
+$config = @"
 country=AU
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -200,13 +200,19 @@ AAAA_QUERY_ANALYSIS=no
 
 Adlist location 
 
-/etc/pihole/adlists.list 
+````/etc/pihole/adlists.list ````
 
  
 
 Remove password from web console 
 
-pihole -a -p 
+````pihole -a -p````
 	
 	
 <h1>🕹Retro-Pi</h1>
+
+# 🔌Pinout/GPIO 🔌
+
+enter image description here
+
+# 💡 LEDs 💡
