@@ -3,7 +3,7 @@
 
 <h1>Installation/OS Install</h1>
 
-Download an OS eg: 
+Download an OS from https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
 ````
 2018-06-27-raspbian-stretch-lite.zip
@@ -12,14 +12,15 @@ Download an OS eg:
 NOTE: No need to extract the .img - Etcher will read the .zip just fine
 
 
-Flash using Etcher, use a USB->microSD Card reader 
+Flash using Etcher, use a USB->microSD Card reader:
 
 https://github.com/balena-io/etcher
 
+- Enable SSH (assumes BOOT volume is E:\ drive)
 ````
 new-item -ItemType File -Name ssh -Path e:\ 
 ````
-
+- Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
 
 ````
 @"
@@ -32,17 +33,13 @@ network={
 	key_mgmt=WPA-PSK
 }
 "@
-$config | out-file c:\temp\text.txt
+$config | out-file E:\wpa_supplicant.conf
 ```````
+Fire up the pi 🚀
 
-Copy files to BOOT 
-````
-ssh 
+Find the pi on the network - use Fing for Android/iOS
 
-wpa_supplicant.conf 
-````
-
-ssh pi@<ipaddress>
+ssh pi@ipaddress
 password: raspberry
         
         
@@ -51,7 +48,6 @@ Set WiFi locale
         sudo raspi-config nonint do_wifi_country AU
 ````
 	
-
 
 Set hostname
 	
