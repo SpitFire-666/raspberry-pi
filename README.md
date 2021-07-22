@@ -1,4 +1,4 @@
-# raspberry-pi
+![image](https://user-images.githubusercontent.com/38451588/126574688-051a6b6a-df2e-494d-9aef-51e4c6470857.png)
 
 
 <h1>Installation/OS Install</h1>
@@ -182,12 +182,13 @@ Tap solenoid
  
 Disable camera LED
 
-	I've disabled the main camera LED by adding disable_camera_led=1 to my /boot/config.txt, and that works fine.
+````disable_camera_led=1 >> /boot/config.txt````
 
- 
+
 	
 <h2>Night Vision/IR camera</h2>
 
+---
 	
 <h1>🚫Pi-Hole🚫</h1>
 
