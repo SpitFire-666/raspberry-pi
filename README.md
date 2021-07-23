@@ -35,17 +35,25 @@ network={
 "@
 $config | out-file E:\wpa_supplicant.conf
 ```````
+OS install done
+
+---
+
 Fire up the pi 🚀
 
 Find the pi on the network - use Fing for Android/iOS
 
+---
+
+```
 ssh pi@ipaddress
+```
 password: raspberry
         
         
 - Set WiFi locale
-````bash
-        sudo raspi-config nonint do_wifi_country AU
+````
+sudo raspi-config nonint do_wifi_country AU
 ````
 	
 
