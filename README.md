@@ -17,12 +17,12 @@ Flash using Etcher, use a USB->microSD Card reader:
 https://github.com/balena-io/etcher
 
 - Enable SSH (assumes BOOT volume is E:\ drive)
-````
+````powershell
 new-item -ItemType File -Name ssh -Path e:\ 
 ````
 - Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
 
-````
+````powershell
 $config = @"
 country=AU
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -44,19 +44,19 @@ password: raspberry
         
         
 Set WiFi locale
-````
+````bash
         sudo raspi-config nonint do_wifi_country AU
 ````
 	
 
 Set hostname
 	
-````
+````bash
 sudo hostnamectl set-hostname my-raspberry-pi	
 ````
-	, set timezone
+set timezone
 
-````
+````bash
 Sudo raspi-config 
 ```` 
 
@@ -131,27 +131,21 @@ define('CAM_STRING',"CATCAM - BACKYARD");
 Motion detection/Notifications 
 
  
-
- 
-	
-
+````
 sudo nano /var/www/html/macros/motion_event.sh 
-
+````
  
-	
-
+````
 sudo "#!/bin/bash" >>  /var/www/html/macros/motion_event.sh 
-
+````
  
- 
+Replace Xs with your pushbullet API key
 	
-
+````
 #!/bin/bash 
+curl -u XXXXXXXXXXXXXXXXXXXXXXXXX: https://api.pushbullet.com/v2/pushes -d type=note -d title="ALERT" -d body='Motion detected!' 
+`````
 
-curl -u o.aaB9N2D4gBixznT7o7gM9FKm8FVzB9R7: https://api.pushbullet.com/v2/pushes -d type=note -d title="CATCAM - Motion Detected" -d body='Potential wild animal sighting!' 
-
- 
-	
 
 sudo chown www-data:www-data /var/www/html/macros/motion_event.sh 
 
@@ -213,6 +207,5 @@ Remove password from web console
 
 # 🔌Pinout/GPIO 🔌
 
-enter image description here
 
 # 💡 LEDs 💡
