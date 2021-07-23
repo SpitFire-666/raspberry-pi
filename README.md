@@ -175,6 +175,10 @@ Disable camera LED
 ````disable_camera_led=1 >> /boot/config.txt````
 
 
+Night mode GUI
+
+System > Style > Night > OK
+
 	
 <h2>Night Vision/IR camera</h2>
 
