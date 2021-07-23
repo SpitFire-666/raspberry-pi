@@ -199,27 +199,77 @@ System > Style > Night > OK
 	
 <h1>🚫Pi-Hole🚫</h1>
 
-Disable IPv6 queries showing up 
+- Disable IPv6 queries showing up 
 
 sudo nano /etc/pihole/pihole-FTL.conf 
 
 AAAA_QUERY_ANALYSIS=no 
 
  
-
- 
-
-Adlist location 
+- Adlist location 
 
 ````/etc/pihole/adlists.list ````
 
- 
-
-Remove password from web console 
+- Remove password from web console 
 
 ````pihole -a -p````
 	
-	
+
+Install pihole 
+
+curl -sSL https://install.pi-hole.net | bash 
+
+ 
+
+ 
+
+Tail pihole log 
+
+tail -f /var/log/pihole.log 
+
+ 
+
+Tail pihole log (show only blocked requests) 
+
+ 
+
+tail -f /var/log/pihole.log | grep 0.0.0.0 
+
+ 
+
+*improved version: 
+
+tail -f /var/log/pihole.log | cut -c 31-100 | grep 0.0.0.0 
+
+- Show last entries added to blocklist 
+````
+tail /etc/pihole/black.list 
+````
+
+- Remove background image 
+````
+sudo mv /var/www/html/admin/img/boxed-bg-dark.jpg /var/www/html/admin/img/boxed-bg-dark.jpg2 
+````
+
+- Adjust HOSTS/DNS names 
+````
+sudo nano /etc/hosts 
+````
+- Show clients per IP
+```` 
+sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.12' AND timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -10
+````
+
+ - Modify default recent queries (instead of just 10 by default) 
+ 
+
+````sudo nano /var/www/html/admin/scripts/pi-hole/js/queries.js ````
+First value is the default the page loads with.  Modify both the first and the 2nd array 
+
+![image](https://user-images.githubusercontent.com/38451588/126849361-c3a6a5c7-d442-4775-b21f-ecd32a30a159.png)
+ 
+
+
 <h1>🕹Retro-Pi</h1>
 
 # 🔌Pinout/GPIO 🔌
