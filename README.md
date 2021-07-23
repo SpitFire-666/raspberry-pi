@@ -43,18 +43,18 @@ ssh pi@ipaddress
 password: raspberry
         
         
-Set WiFi locale
+- Set WiFi locale
 ````bash
         sudo raspi-config nonint do_wifi_country AU
 ````
 	
 
-Set hostname
+- Set hostname
 	
 ````bash
 sudo hostnamectl set-hostname my-raspberry-pi	
 ````
-set timezone
+- Set timezone
 
 ````bash
 Sudo raspi-config 
@@ -62,7 +62,7 @@ Sudo raspi-config
 
 <h1>📷Camera📷</h1>
         
-Enable camera
+- Enable camera
 
 ````
 sudo raspi-config
@@ -75,13 +75,13 @@ sudo raspi-config
 3, interface options
 	
 
-Update and upgrade
+- Update and upgrade
 
 ````
 sudo apt-get update -y && sudo apt-get dist-upgrade -y
 ````
 	
-Install Git
+- Install Git
 	
 ````        
 sudo apt-get install git -y
@@ -90,7 +90,7 @@ sudo ./RPi_Cam_Web_Interface/install.sh
 sudo reboot
 ````
 	
-WEB INTERFACE 
+- WEB INTERFACE 
 
     Set motion detection to internal 
 
@@ -98,13 +98,14 @@ WEB INTERFACE
 
  
 
-Custom annotation 
+- Custom annotation 
+
+![image](https://user-images.githubusercontent.com/38451588/126848389-ea5cd216-89a9-4d28-815e-20a0fa21dafa.png)
 
 ````
 %h:%m:%s %a 
 ````
  
-
 Use ````%a````, this references ````/dev/shm/mjpeg/user_annotate.txt````
 
 Use a cron job to update this file automatically (eg for day of week): 
@@ -118,17 +119,21 @@ Use a cron job to update this file automatically (eg for day of week):
 
  
 
-Change site name/page title 
+- Change site name/page title
+
+![image](https://user-images.githubusercontent.com/38451588/126848437-fd06864b-52dd-419b-8ab5-27a60972fd2a.png)
+
+
 ````
 sudo nano /var/www/html/config.php 
 ````
-define('CAM_STRING',"CATCAM - BACKYARD"); 
+define('CAM_STRING',"pi-camera"); 
 
  
 
  
 
-Motion detection/Notifications 
+- Motion detection/Notifications 
 
  
 ````
