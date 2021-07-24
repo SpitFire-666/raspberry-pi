@@ -97,14 +97,22 @@ git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
 sudo ./RPi_Cam_Web_Interface/install.sh
 sudo reboot
 ````
-	
+
+- Documentation
+
+http://elinux.org/RPi-Cam-Web-Interface
+
 - WEB INTERFACE 
 
     Set motion detection to internal 
 
     Set Buffer to 4000 
 
- 
+ - Preview Quality
+
+Quality is the jpeg compression factor (0-100). Lower numbers give better compression at the expense of quality. It is set to 25 by default which gives pretty good compression and not too much degradation. You can try lowering it to say 15 which will significantly lower sizes further but you will start to see some degradation. Lower than this it will start to get bad.
+
+Divider is the rate at which new data is fetched. It is the video fps (default 25) divided by 'Divider'. Nominally that would mean it is trying to update at 25fps but in practice other delays lower this a bit. Increasing the divider lowers the fetch frame rate so 3 would give a nominal rate of 8fps. This will also have a dramatic effect on bandwidth. 
 
 - Custom annotation 
 
@@ -124,9 +132,6 @@ Use a cron job to update this file automatically (eg for day of week):
   * * * * * date +"\%a \%d \%b \%Y"  > /dev/shm/mjpeg/user_annotate.txt 
 ````
  
-
- 
-
 - Change site name/page title
 
 ![image](https://user-images.githubusercontent.com/38451588/126848437-fd06864b-52dd-419b-8ab5-27a60972fd2a.png)
@@ -135,11 +140,8 @@ Use a cron job to update this file automatically (eg for day of week):
 ````
 sudo nano /var/www/html/config.php 
 ````
-define('CAM_STRING',"pi-camera"); 
+````define('CAM_STRING',"pi-camera"); ````
 
- 
-
- 
 
 - Motion detection/Notifications 
 
@@ -173,26 +175,19 @@ sudo nano /etc/raspimjpeg
 video_buffer in ms 
 
  
-FAVICON 
+- Add FAVICON 
 
 
-
- 
-
-Tap solenoid 
-20mm 
-
- 
-Disable camera LED
+- Disable camera LED
 
 ````disable_camera_led=1 >> /boot/config.txt````
 
 
-Night mode GUI
+- Dark/night mode GUI
 
 System > Style > Night > OK
 
-	
+
 <h2>Night Vision/IR camera</h2>
 
 ---
