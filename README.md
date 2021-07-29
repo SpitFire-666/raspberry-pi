@@ -161,11 +161,11 @@ Replace Xs with your pushbullet API key
 curl -u XXXXXXXXXXXXXXXXXXXXXXXXX: https://api.pushbullet.com/v2/pushes -d type=note -d title="ALERT" -d body='Motion detected!' 
 `````
 
-
+````
 sudo chown www-data:www-data /var/www/html/macros/motion_event.sh 
 
 sudo chmod 764 /var/www/html/macros/motion_event.sh 
-
+````
  
 
 Add buffer  
@@ -188,16 +188,16 @@ video_buffer in ms
 System > Style > Night > OK
 
 
-<h2>Night Vision/IR camera</h2>
+## Night Vision/IR camera ##
 
 ---
 	
 <h1>🚫Pi-Hole🚫</h1>
 
 - Disable IPv6 queries showing up 
-
+````
 sudo nano /etc/pihole/pihole-FTL.conf 
-
+````
 AAAA_QUERY_ANALYSIS=no 
 
  
@@ -210,17 +210,17 @@ AAAA_QUERY_ANALYSIS=no
 ````pihole -a -p````
 	
 
-Install pihole 
+- Install pihole 
 ````
 curl -sSL https://install.pi-hole.net | bash 
 ````
  
-Tail pihole log 
+- Tail pihole log 
 ````
 tail -f /var/log/pihole.log 
 ````
 
-Tail pihole log (show only blocked requests) 
+- Tail pihole log (show only blocked requests) 
 ````
 tail -f /var/log/pihole.log | grep 0.0.0.0 
 ````
@@ -250,12 +250,11 @@ sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.
 ````
 
 - Modify default recent queries (instead of just 10 by default) 
- 
-
 ````sudo nano /var/www/html/admin/scripts/pi-hole/js/queries.js ````
-First value is the default the page loads with.  Modify both the first and the 2nd array 
 
-![image](https://user-images.githubusercontent.com/38451588/126849361-c3a6a5c7-d442-4775-b21f-ecd32a30a159.png)
+First value is the default the page loads with.  Modify both the first and the 2nd array (eg 60):
+
+![image](https://user-images.githubusercontent.com/38451588/127440901-5a2f37d0-3b60-41c0-87ea-9a72e03d451c.png)
  
 
 
