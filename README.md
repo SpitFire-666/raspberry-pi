@@ -211,31 +211,25 @@ AAAA_QUERY_ANALYSIS=no
 	
 
 Install pihole 
-
+````
 curl -sSL https://install.pi-hole.net | bash 
-
+````
  
-
- 
-
 Tail pihole log 
-
+````
 tail -f /var/log/pihole.log 
-
- 
+````
 
 Tail pihole log (show only blocked requests) 
-
- 
-
+````
 tail -f /var/log/pihole.log | grep 0.0.0.0 
-
+````
  
 
 *improved version: 
-
+````
 tail -f /var/log/pihole.log | cut -c 31-100 | grep 0.0.0.0 
-
+````
 - Show last entries added to blocklist 
 ````
 tail /etc/pihole/black.list 
@@ -255,7 +249,7 @@ sudo nano /etc/hosts
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.12' AND timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -10
 ````
 
- - Modify default recent queries (instead of just 10 by default) 
+- Modify default recent queries (instead of just 10 by default) 
  
 
 ````sudo nano /var/www/html/admin/scripts/pi-hole/js/queries.js ````
@@ -265,9 +259,19 @@ First value is the default the page loads with.  Modify both the first and the 2
  
 
 
-<h1>🕹Retro-Pi</h1>
+# 🕹Retro-Pi #
+
+
 
 # 🔌Pinout/GPIO 🔌
 
 
 # 💡 LEDs 💡
+
+
+
+# 🌡 Temperature Sensor 🌡
+
+DSB18B20 - comes in transistor or probe form
+
+![image](https://user-images.githubusercontent.com/38451588/127440391-a07df571-a7e8-408d-b965-bd270ae9b1a0.png)
