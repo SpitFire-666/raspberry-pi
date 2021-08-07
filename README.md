@@ -16,11 +16,11 @@ Flash using Etcher, use a USB->microSD Card reader:
 
 https://github.com/balena-io/etcher
 
-- Enable SSH (assumes BOOT volume is E:\ drive)
+### Enable SSH (assumes BOOT volume is E:\ drive)
 ````powershell
 new-item -ItemType File -Name ssh -Path e:\ 
 ````
-- Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
+### Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
 
 ````powershell
 $config = @"
@@ -51,18 +51,18 @@ ssh pi@ipaddress
 password: raspberry
         
         
-- Set WiFi locale
+### Set WiFi locale
 ````
 sudo raspi-config nonint do_wifi_country AU
 ````
 	
 
-- Set hostname
+### Set hostname
 	
 ````bash
 sudo hostnamectl set-hostname my-raspberry-pi	
 ````
-- Set timezone
+### Set timezone
 
 ````bash
 Sudo raspi-config 
@@ -70,7 +70,7 @@ Sudo raspi-config
 
 <h1>📷Camera📷</h1>
         
-- Enable camera
+### Enable camera
 
 ````
 sudo raspi-config
@@ -194,37 +194,37 @@ System > Style > Night > OK
 	
 <h1>🚫Pi-Hole🚫</h1>
 
-- Disable IPv6 queries showing up 
+### Disable IPv6 queries showing up 
 ````
 sudo nano /etc/pihole/pihole-FTL.conf 
 ````
 AAAA_QUERY_ANALYSIS=no 
 
  
-- Adlist location 
+### Adlist location 
 
 ````
 /etc/pihole/adlists.list 
 ````
 
-- Remove password from web console 
+### Remove password from web console 
 
 ````
 pihole -a -p
 ````
 	
 
-- Install pihole 
+### Install pihole 
 ````
 curl -sSL https://install.pi-hole.net | bash 
 ````
  
-- Tail pihole log 
+### Tail pihole log 
 ````
 tail -f /var/log/pihole.log 
 ````
 
-- Tail pihole log (show only blocked requests) 
+### Tail pihole log (show only blocked requests) 
 ````
 tail -f /var/log/pihole.log | grep 0.0.0.0 
 ````
@@ -238,28 +238,28 @@ tail -f /var/log/pihole.log | cut -c 31-100 | grep 0.0.0.0
 tail /etc/pihole/black.list 
 ````
 
-- Remove background image 
+### Remove background image 
 ````
 sudo mv /var/www/html/admin/img/boxed-bg-dark.jpg /var/www/html/admin/img/boxed-bg-dark.jpg2 
 ````
 
-- Adjust HOSTS/DNS names 
+### Adjust HOSTS/DNS names 
 ````
 sudo nano /etc/hosts 
 ````
-- Show clients per IP
+### Show clients per IP
 ```` 
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.12' AND timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -10
 ````
 
-- Modify default recent queries (instead of just 10 by default) 
+### Modify default recent queries (instead of just 10 by default) 
 ````sudo nano /var/www/html/admin/scripts/pi-hole/js/queries.js ````
 
 First value is the default the page loads with.  Modify both the first and the 2nd array (eg 60):
 
 ![image](https://user-images.githubusercontent.com/38451588/127440901-5a2f37d0-3b60-41c0-87ea-9a72e03d451c.png)
  
-- Setup exclusions for specific devices
+### Setup exclusions for specific devices
 Happy wife, happy life
 
 
@@ -276,7 +276,8 @@ Happy wife, happy life
 
 # 🌡 Temperature Sensor 🌡
 
-DSB18B20 - comes in transistor or waterproof probe form
+### DSB18B20
+- comes in transistor or waterproof probe form
 
 ![image](https://user-images.githubusercontent.com/38451588/127440391-a07df571-a7e8-408d-b965-bd270ae9b1a0.png)
 
