@@ -203,11 +203,15 @@ AAAA_QUERY_ANALYSIS=no
  
 - Adlist location 
 
-````/etc/pihole/adlists.list ````
+````
+/etc/pihole/adlists.list 
+````
 
 - Remove password from web console 
 
-````pihole -a -p````
+````
+pihole -a -p
+````
 	
 
 - Install pihole 
@@ -224,7 +228,6 @@ tail -f /var/log/pihole.log
 ````
 tail -f /var/log/pihole.log | grep 0.0.0.0 
 ````
- 
 
 *improved version: 
 ````
@@ -256,6 +259,8 @@ First value is the default the page loads with.  Modify both the first and the 2
 
 ![image](https://user-images.githubusercontent.com/38451588/127440901-5a2f37d0-3b60-41c0-87ea-9a72e03d451c.png)
  
+- Setup exclusions for specific devices
+Happy wife, happy life
 
 
 # 🕹Retro-Pi #
