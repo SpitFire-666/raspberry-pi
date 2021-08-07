@@ -132,7 +132,7 @@ Use a cron job to update this file automatically (eg for day of week):
   * * * * * date +"\%a \%d \%b \%Y"  > /dev/shm/mjpeg/user_annotate.txt 
 ````
  
-- Change site name/page title
+### Change site name/page title
 
 ![image](https://user-images.githubusercontent.com/38451588/126848437-fd06864b-52dd-419b-8ab5-27a60972fd2a.png)
 
@@ -143,7 +143,7 @@ sudo nano /var/www/html/config.php
 ````define('CAM_STRING',"pi-camera"); ````
 
 
-- Motion detection/Notifications 
+### Motion detection/Notifications 
 
  
 ````
@@ -175,15 +175,15 @@ sudo nano /etc/raspimjpeg
 video_buffer in ms 
 
  
-- Add FAVICON 
+### Add FAVICON 
 
 
-- Disable camera LED
+### Disable camera LED
 
 ````disable_camera_led=1 >> /boot/config.txt````
 
 
-- Dark/night mode GUI
+### Dark/night mode GUI
 
 System > Style > Night > OK
 
