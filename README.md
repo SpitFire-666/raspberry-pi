@@ -264,8 +264,25 @@ Happy wife, happy life
 
 
 # 🕹Retro-Pi #
+````
+sudo update-locale LC_ALL="en_GB.UTF8" 
+sudo update-locale LANGUAGE="en_GB:en" 
+sudo apt-get install git lsb-release -y 
+sudo apt-get update 
+sudo apt-get -f install 
+sudo apt-get dist-upgrade 
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git 
+
+cd RetroPie-Setup 
+chmod +x retropie_setup.sh 
+sudo ./retropie_setup.sh 
+````
+Download the img 
 
 
+Stretch the aspect ratio 
+
+ 
 
 # 🔌Pinout/GPIO 🔌
 
@@ -297,6 +314,6 @@ DS18B20 Wiring: Red = VCC, Yellow = Data, Black = GND
 
 #### Temp readout
 ````
-cat /sys/bus/w1/devices/28-05169261bfff/w1_slave | grep t=
+cat /sys/bus/w1/devices/28*/w1_slave | grep t | cut -d= -f2
 ````
 
