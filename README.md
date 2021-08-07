@@ -269,6 +269,12 @@ Happy wife, happy life
 
 # 🔌Pinout/GPIO 🔌
 
+### Zero
+![image](https://user-images.githubusercontent.com/38451588/128586000-983690dc-aba4-41ef-a676-669e12613928.png)
+
+### 2B
+![image](https://user-images.githubusercontent.com/38451588/128586020-bae1d6be-99b6-427c-a07b-d72a80d02570.png)
+
 
 # 💡 LEDs 💡
 
@@ -286,3 +292,6 @@ Happy wife, happy life
 
 
  DS18B20 Wiring: Red = VCC, Yellow = Data, Black = GND 
+
+
+# 
