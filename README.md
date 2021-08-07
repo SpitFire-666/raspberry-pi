@@ -285,13 +285,18 @@ Happy wife, happy life
 ### DSB18B20
 - comes in transistor or waterproof probe form
 
+#### Wiring
+
 ![image](https://user-images.githubusercontent.com/38451588/127440391-a07df571-a7e8-408d-b965-bd270ae9b1a0.png)
 
 
 ![image](https://user-images.githubusercontent.com/38451588/128584637-6f2e95ba-4ad6-4130-a032-451c5bb3ce11.png)
 
 
- DS18B20 Wiring: Red = VCC, Yellow = Data, Black = GND 
+DS18B20 Wiring: Red = VCC, Yellow = Data, Black = GND
 
+#### Temp readout
+````
+cat /sys/bus/w1/devices/28-05169261bfff/w1_slave | grep t=
+````
 
-# 
