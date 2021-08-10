@@ -179,6 +179,11 @@ video_buffer in ms
  
 ### Add FAVICON 
 
+- Upload a favicon.ico to HOME
+
+````
+sudo cp ~/favicon.ico /var/www/
+````
 
 ### Disable camera LED
 
