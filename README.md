@@ -104,11 +104,13 @@ http://elinux.org/RPi-Cam-Web-Interface
 
 - WEB INTERFACE 
 
-    Set motion detection to internal 
+Camera > Motion Detection: internal
 
-    Set Buffer to 4000 
+Camera > Buffer: 4000
 
- - Preview Quality
+Camera > Preview Quality: 15 
+
+
 
 Quality is the jpeg compression factor (0-100). Lower numbers give better compression at the expense of quality. It is set to 25 by default which gives pretty good compression and not too much degradation. You can try lowering it to say 15 which will significantly lower sizes further but you will start to see some degradation. Lower than this it will start to get bad.
 
