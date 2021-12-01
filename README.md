@@ -324,3 +324,10 @@ DS18B20 Wiring: Red = VCC, Yellow = Data, Black = GND
 cat /sys/bus/w1/devices/28*/w1_slave | grep t | cut -d= -f2
 ````
 
+## Stepper motor
+
+
+https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/
+
+https://thinkingofpi.com/getting-started/raspberry-pi-stepper-motor/
+
