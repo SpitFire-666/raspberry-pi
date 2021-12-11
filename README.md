@@ -331,3 +331,10 @@ https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/
 
 https://thinkingofpi.com/getting-started/raspberry-pi-stepper-motor/
 
+
+## Servo
+
+![image](https://user-images.githubusercontent.com/38451588/145664477-f506e719-35d2-4a39-9622-b8cdead1684e.png)
+
+
+![image](https://user-images.githubusercontent.com/38451588/145664624-7e92ec48-ce2f-42b3-9ac7-af17bef66fa6.png)
