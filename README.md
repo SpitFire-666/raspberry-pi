@@ -334,6 +334,9 @@ https://thinkingofpi.com/getting-started/raspberry-pi-stepper-motor/
 
 ## Servo
 
+![image](https://user-images.githubusercontent.com/38451588/145665441-4514152d-7f88-43de-b93b-58b291b3a66d.png)
+
+
 ![image](https://user-images.githubusercontent.com/38451588/145664477-f506e719-35d2-4a39-9622-b8cdead1684e.png)
 
 
