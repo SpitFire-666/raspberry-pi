@@ -341,3 +341,23 @@ https://thinkingofpi.com/getting-started/raspberry-pi-stepper-motor/
 
 
 ![image](https://user-images.githubusercontent.com/38451588/145664624-7e92ec48-ce2f-42b3-9ac7-af17bef66fa6.png)
+
+
+
+### Anti-Clockwise
+````python
+import RPi.GPIO as GPIO
+import time
+
+#print("doing stuff")
+
+servoPIN = 17
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(servoPIN, GPIO.OUT)
+
+p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
+
+p.start(2.5) # clockwise
+time.sleep(1) # run for x seconds
+p.stop()
+````
