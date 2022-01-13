@@ -207,7 +207,11 @@ sudo nano /etc/pihole/pihole-FTL.conf
 ````
 AAAA_QUERY_ANALYSIS=no 
 
- 
+### Add multiple domains to blacklist
+
+![image](https://user-images.githubusercontent.com/38451588/149241259-e91e49be-581c-4f35-9a1c-cc9d2e50b083.png)
+
+
 ### Adlist location 
 
 ````
