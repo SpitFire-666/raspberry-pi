@@ -11,7 +11,6 @@ Download an OS from https://www.raspberrypi.org/software/operating-systems/#rasp
 
 NOTE: No need to extract the .img - Etcher will read the .zip just fine
 
-
 Flash using Etcher, use a USB->microSD Card reader:
 
 https://github.com/balena-io/etcher
@@ -206,6 +205,12 @@ System > Style > Night > OK
 sudo nano /etc/pihole/pihole-FTL.conf 
 ````
 AAAA_QUERY_ANALYSIS=no 
+
+### Disable PTR records showing up
+
+````
+ANALYZE_ONLY_A_AND_AAAA=true
+````
 
 ### Add multiple domains to blacklist
 
