@@ -170,9 +170,9 @@ sudo chmod 764 /var/www/html/macros/motion_event.sh
  
 
 Add buffer  
-
+````
 sudo nano /etc/raspimjpeg 
-
+````
 video_buffer in ms 
 
  
@@ -256,7 +256,7 @@ tail /etc/pihole/black.list
 
 ### Remove background image 
 ````
-sudo mv /var/www/html/admin/img/boxed-bg-dark.jpg /var/www/html/admin/img/boxed-bg-dark.jpg2 
+sudo mv /var/www/html/admin/img/boxed-bg-dark.png /var/www/html/admin/img/boxed-bg-dark.png2
 ````
 
 ### Adjust HOSTS/DNS names 
