@@ -67,7 +67,7 @@ sudo hostnamectl set-hostname my-raspberry-pi
 Sudo raspi-config 
 ```` 
 
-<h1>📷Camera📷</h1>
+# 📷Camera📷
         
 ### Enable camera
 
@@ -315,8 +315,19 @@ Stretch the aspect ratio
 
 # 🌡 Temperature Sensor 🌡
 
+
 ### DSB18B20
 - comes in transistor or waterproof probe form
+- is a digital probe
+- -55°C to 125°C range
+- 3.0V to 5.0V operating voltage
+
+## Enable 1-Wire sensor
+
+````
+sudo raspi-config
+````
+
 
 #### Wiring
 
