@@ -381,3 +381,7 @@ p.start(2.5) # clockwise
 time.sleep(1) # run for x seconds
 p.stop()
 ````
+
+
+sudo apt install python3-gpiozero -y
+
