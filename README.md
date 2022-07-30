@@ -263,6 +263,12 @@ sudo mv /var/www/html/admin/img/boxed-bg-dark.png /var/www/html/admin/img/boxed-
 ````
 sudo nano /etc/hosts 
 ````
+### Top 50 blocked domains (past day)
+```sh
+sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE  timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -50
+```
+
+
 ### Show clients per IP
 ```` 
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.12' AND timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -10
