@@ -5,9 +5,9 @@
 
 Download an OS from https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
-````
+```
 2018-06-27-raspbian-stretch-lite.zip
-````
+```
 
 NOTE: No need to extract the .img - Etcher will read the .zip just fine
 
@@ -16,12 +16,12 @@ Flash using Etcher, use a USB->microSD Card reader:
 https://github.com/balena-io/etcher
 
 ### Enable SSH (assumes BOOT volume is E:\ drive)
-````powershell
+```powershell
 new-item -ItemType File -Name ssh -Path e:\ 
-````
-### Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
+```
 
-````powershell
+### Auto-join WiFi (update ssid and psk) (assumes BOOT volume is E:\ drive
+```powershell
 $config = @"
 country=AU
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -33,7 +33,7 @@ network={
 }
 "@
 $config | out-file E:\wpa_supplicant.conf
-```````
+```
 OS install done
 
 ---
@@ -71,9 +71,9 @@ Sudo raspi-config
         
 ### Enable camera
 
-````
+```bash
 sudo raspi-config
-````
+```
 	
 	Test camera
 	
@@ -138,9 +138,10 @@ Use a cron job to update this file automatically (eg for day of week):
 ![image](https://user-images.githubusercontent.com/38451588/126848437-fd06864b-52dd-419b-8ab5-27a60972fd2a.png)
 
 
-````
+```bash
 sudo nano /var/www/html/config.php 
-````
+```
+
 ````define('CAM_STRING',"pi-camera"); ````
 
 
@@ -198,19 +199,20 @@ System > Style > Night > OK
 
 ---
 	
-<h1>🚫Pi-Hole🚫</h1>
+# 🚫🍓 Pi-Hole 
 
 ### Disable IPv6 queries showing up 
-````
+```bash
 sudo nano /etc/pihole/pihole-FTL.conf 
-````
-AAAA_QUERY_ANALYSIS=no 
+```
+
+```AAAA_QUERY_ANALYSIS=no```
 
 ### Disable PTR records showing up
 
-````
+```bash
 ANALYZE_ONLY_A_AND_AAAA=true
-````
+```
 
 ### Add multiple domains to blacklist
 
@@ -219,31 +221,30 @@ ANALYZE_ONLY_A_AND_AAAA=true
 
 ### Adlist location 
 
-````
+```bash
 /etc/pihole/adlists.list 
-````
+```
 
 ### Remove password from web console 
 
-````
+```bash
 pihole -a -p
-````
-	
+```
 
 ### Install pihole 
 ````
-curl -sSL https://install.pi-hole.net | bash 
+curl -sSL https://install.pi-hole.net | bash
 ````
  
 ### Tail pihole log 
-````
-tail -f /var/log/pihole.log 
-````
+```bash
+tail -f /var/log/pihole.log
+```
 
 ### Tail pihole log (show only blocked requests) 
-````
-tail -f /var/log/pihole.log | grep 0.0.0.0 
-````
+```bash
+tail -f /var/log/pihole.log | grep 0.0.0.0
+```
 
 *improved version: 
 ````
@@ -255,9 +256,9 @@ tail /etc/pihole/black.list
 ````
 
 ### Remove background image 
-````
+```bash
 sudo mv /var/www/html/admin/img/boxed-bg-dark.png /var/www/html/admin/img/boxed-bg-dark.png2
-````
+```
 
 ### Adjust HOSTS/DNS names 
 ````
@@ -268,11 +269,10 @@ sudo nano /etc/hosts
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE  timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -50
 ```
 
-
 ### Show clients per IP
-```` 
+```bash
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.12' AND timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -10
-````
+```
 
 ### Modify default recent queries (instead of just 10 by default) 
 ````sudo nano /var/www/html/admin/scripts/pi-hole/js/queries.js ````
