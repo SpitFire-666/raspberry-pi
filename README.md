@@ -67,37 +67,37 @@ sudo hostnamectl set-hostname my-raspberry-pi
 Sudo raspi-config 
 ```` 
 
-# 📷Camera📷
+# 📷 Camera
         
 ### Enable camera
 
+3, interface options
 ```bash
 sudo raspi-config
 ```
 	
-	Test camera
-	
-	raspistill -o  image.jpg 
-	
-3, interface options
-	
+### 📸 Test camera
 
-- Update and upgrade
+```bash
+raspistill -o  image.jpg 
+```	
 
-````
+### Update and upgrade
+
+```bash
 sudo apt-get update -y && sudo apt-get dist-upgrade -y
-````
+```
 	
-- Install Git
+### Install Git, clone the RPi_Cam_Web_interface
 	
-````        
+```bash
 sudo apt-get install git -y
 git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git 
 sudo ./RPi_Cam_Web_Interface/install.sh
 sudo reboot
-````
+```
 
-- Documentation
+### Documentation
 
 http://elinux.org/RPi-Cam-Web-Interface
 
@@ -109,8 +109,6 @@ Camera > Buffer: 4000
 
 Camera > Preview Quality: 15 
 
-
-
 Quality is the jpeg compression factor (0-100). Lower numbers give better compression at the expense of quality. It is set to 25 by default which gives pretty good compression and not too much degradation. You can try lowering it to say 15 which will significantly lower sizes further but you will start to see some degradation. Lower than this it will start to get bad.
 
 Divider is the rate at which new data is fetched. It is the video fps (default 25) divided by 'Divider'. Nominally that would mean it is trying to update at 25fps but in practice other delays lower this a bit. Increasing the divider lowers the fetch frame rate so 3 would give a nominal rate of 8fps. This will also have a dramatic effect on bandwidth. 
@@ -119,9 +117,9 @@ Divider is the rate at which new data is fetched. It is the video fps (default 2
 
 ![image](https://user-images.githubusercontent.com/38451588/126848389-ea5cd216-89a9-4d28-815e-20a0fa21dafa.png)
 
-````
+```
 %h:%m:%s %a 
-````
+```
  
 Use ````%a````, this references ````/dev/shm/mjpeg/user_annotate.txt````
 
@@ -142,8 +140,9 @@ Use a cron job to update this file automatically (eg for day of week):
 sudo nano /var/www/html/config.php 
 ```
 
-````define('CAM_STRING',"pi-camera"); ````
-
+```
+define('CAM_STRING',"pi-camera");
+```
 
 ### Motion detection/Notifications 
 
@@ -169,37 +168,39 @@ sudo chown www-data:www-data /var/www/html/macros/motion_event.sh
 sudo chmod 764 /var/www/html/macros/motion_event.sh 
 ````
  
-
-Add buffer  
-````
-sudo nano /etc/raspimjpeg 
-````
+### Add buffer
 video_buffer in ms 
-
+```
+sudo nano /etc/raspimjpeg 
+```
  
 ### Add FAVICON 
 
 - Upload a favicon.ico to HOME
 
-````
+```
 sudo cp ~/favicon.ico /var/www/
-````
+```
 
 ### Disable camera LED
-
-````disable_camera_led=1 >> /boot/config.txt````
-
+Note: need to do this interactively unless you're root
+Add:
+```
+disable_camera_led=1
+```
+to:
+```
+/boot/config.txt
+```
 
 ### Dark/night mode GUI
 
 System > Style > Night > OK
 
-
 ## Night Vision/IR camera ##
 
----
 	
-# 🚫🍓 Pi-Hole 
+# 🍓🚫 Pi-Hole 
 
 ### Disable IPv6 queries showing up 
 ```bash
