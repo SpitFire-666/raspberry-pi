@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/38451588/126574688-051a6b6a-df2e-494d-9aef-51e4c6470857.png)
 
 
-<h1>Installation/OS Install (Windows) </h1>
+# Installation/OS Install (Windows)
 
 Download an OS from https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
@@ -210,7 +210,6 @@ sudo nano /etc/pihole/pihole-FTL.conf
 ```AAAA_QUERY_ANALYSIS=no```
 
 ### Disable PTR records showing up
-
 ```bash
 ANALYZE_ONLY_A_AND_AAAA=true
 ```
@@ -269,6 +268,11 @@ sudo nano /etc/hosts
 ```sh
 sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE timestamp>='$(($(date +%s) - 86400))'" | sort | uniq -c | sort -n -r | head -50
 ```
+### Blocked domains for specific client
+```sh
+sqlite3 /etc/pihole/pihole-FTL.db "SELECT domain FROM queries WHERE client='192.168.1.1' AND (STATUS == 1 OR STATUS == 4 OR STATUS == 5 OR STATUS == 9 OR STATUS == 10 OR STATUS == 11) AND timestamp>='$(($(date +%s) - 80000))'"  | sort | uniq
+```
+
 
 sqlite3 "/etc/pihole/pihole-FTL.db" "SELECT domain,count(domain) FROM queries WHERE (STATUS == 2 OR STATUS == 3) GROUP BY domain ORDER BY count(domain) DESC LIMIT 3"
 
