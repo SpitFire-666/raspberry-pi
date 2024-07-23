@@ -202,15 +202,9 @@ System > Style > Night > OK
 	
 # 🍓🚫 Pi-Hole 
 
-### Disable IPv6 queries showing up 
-```bash
-sudo nano /etc/pihole/pihole-FTL.conf 
-```
-
-```AAAA_QUERY_ANALYSIS=no```
-
 ### Disable PTR records showing up
 ```bash
+sudo nano /etc/pihole/pihole-FTL.conf 
 ANALYZE_ONLY_A_AND_AAAA=true
 ```
 
