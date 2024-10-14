@@ -202,6 +202,11 @@ System > Style > Night > OK
 	
 # 🍓🚫 Pi-Hole 
 
+### Install Pi-Hole
+```bash
+curl -sSL https://install.pi-hole.net | bash
+```
+
 ### Disable PTR records showing up
 ```bash
 sudo nano /etc/pihole/pihole-FTL.conf 
