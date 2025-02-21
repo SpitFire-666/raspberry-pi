@@ -224,7 +224,11 @@ ANALYZE_ONLY_A_AND_AAAA=true
 /etc/pihole/adlists.list 
 ```
 
-### Remove password from web console 
+### Remove password from web console (press enter for blank)
+
+```bash
+pihole setpassword
+```
 
 ```bash
 pihole -a -p
